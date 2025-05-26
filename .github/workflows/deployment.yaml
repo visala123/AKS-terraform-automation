@@ -10,18 +10,14 @@ jobs:
     permissions:
       id-token: write
       contents: read
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
+      env:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
