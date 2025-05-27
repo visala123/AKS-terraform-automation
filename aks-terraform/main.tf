@@ -36,11 +36,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
     docker_bridge_cidr = "172.17.0.1/16"
   }
 
-  addon_profile {
-    oms_agent {
-      enabled                    = true
-      log_analytics_workspace_id = azurerm_log_analytics_workspace.law.id
-    }
+   monitoring {
+    enabled                    = true
+    workspace_resource_id      = azurerm_log_analytics_workspace.law.id
   }
 
 
