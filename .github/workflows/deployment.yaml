@@ -47,10 +47,9 @@ jobs:
         working-directory: ./aks-terraform
         run: terraform plan
 
-      - name: Terraform Apply
+      # - name: Terraform Apply
+      #   working-directory: ./aks-terraform
+      #   run: terraform apply -auto-approve
+      - name: Terraform Destroy
         working-directory: ./aks-terraform
-        run: terraform apply -auto-approve
-    #- name: Terraform Destroy
-      ##id: destroy
-      #working-directory: ./aks-terraform
-      #run: terraform destroy -auto-approve
+        run: terraform destroy -auto-approve
