@@ -52,6 +52,6 @@ jobs:
         working-directory: ./aks-terraform
         run: terraform apply -auto-approve
     #- name: Terraform Destroy
-      #id: destroy
+      ##id: destroy
       #working-directory: ./aks-terraform
       #run: terraform destroy -auto-approve
