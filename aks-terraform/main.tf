@@ -36,10 +36,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
     docker_bridge_cidr = "172.17.0.1/16"
   }
 
-   monitoring {
-    enabled                    = true
-    workspace_resource_id      = azurerm_log_analytics_workspace.law.id
-  }
+   #monitoring {
+  #   enabled                    = true
+  #   workspace_resource_id      = azurerm_log_analytics_workspace.law.id
+  # }
 
 
   tags = {
